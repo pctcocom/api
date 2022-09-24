@@ -1,5 +1,6 @@
 <?php
 namespace Pctco\Api\Git\Github;
+use Pctco\Coding\Emoji;
 class User{
    function __construct ($git) {
       $this->git = $git;
@@ -18,7 +19,7 @@ class User{
             'avatar'   =>   $request->avatar_url,
             'location'   =>   $request->location,
             'company'   =>   $request->company,
-            'signature'   =>   $request->bio,
+            'signature'   =>   Emoji::Encode($request->bio),
             'group'   =>   $this->git->group,
             'blog'   =>   $request->blog,
             'email'   =>   $request->email,
